@@ -1,0 +1,63 @@
+
+<!-- ui-select and input text below the carousel -->
+<!-- row -->
+<div class="row">
+	<div style="width: 50%; float: left;">
+		<!-- .col-lg-4 -->
+		<div class="col-lg-4" style="width: 100%">
+			<img class="img-circle" src="resources/img/motorbikes.png"
+				alt="Generic placeholder image" width="140" height="140">
+			<h2>Delete motorbike place</h2>
+			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
+				euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+				Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+				Praesent commodo cursus magna.</p>
+			<p>
+				<a class="btn btn-default"
+					ng-click="deleteEmptyVehiclePlaces( motorbikeLevelNumberToDelete.selected.levelNumber, motorbikePlaceToDelete.selected, placeType.placeType)"
+					role="button">Delete motorbike place &raquo;</a>
+			</p>
+		</div>
+		<!-- /.col-lg-4 -->
+	</div>
+	<!-- vehicle place details -->
+	<div
+		style="width: 50%; float: left; text-align: center; margin-top: 5%;">
+		<!-- Level number -->
+		<div class="SumoSelect sumo_somename" tabindex="0" style="width: 80%">
+			<ui-select search-enabled="false"
+				ng-model="motorbikeLevelNumberToDelete.selected" theme="bootstrap"
+				append-to-body="true"> <ui-select-match
+				placeholder="Select the level number">{{$select.selected.levelNumber}}</ui-select-match>
+			<ui-select-choices repeat="item in levels"> <span
+				ng-bind="item.levelNumber"></span> </ui-select-choices> </ui-select>
+		</div>
+		<!-- /Level number -->
+
+		<!-- Place number -->
+		<div class="SumoSelect sumo_somename" tabindex="0"
+			style="width: 80%; margin-top: 20px;">
+			<ui-select search-enabled="false" ng-model="motorbikePlaceToDelete.selected"
+				theme="bootstrap" append-to-body="true"> <ui-select-match
+				placeholder="Select the place number">{{$select.selected}}</ui-select-match>
+			<ui-select-choices
+				repeat="motorbikePlaceToDelete in motorbikeLevelNumberToDelete.selected.listPlaceNumber">
+			<span ng-bind="motorbikePlaceToDelete"></span> </ui-select-choices> </ui-select>
+		</div>
+		<!-- /Place number -->
+
+		<!-- Place type -->
+		<div class="SumoSelect sumo_somename" tabindex="0"
+			style="width: 80%; margin-top: 20px;">
+			<ui-select search-enabled="false" ng-model="placeType"
+				theme="bootstrap" append-to-body="true" ng-disabled="true">
+			<ui-select-match placeholder="">{{$select.selected.placeType}}</ui-select-match>
+			<ui-select-choices repeat="item in levels"> <span
+				ng-bind="item.placeType"></span> </ui-select-choices> </ui-select>
+		</div>
+		<!-- /Place type -->
+
+	</div>
+	<!-- /vehicle place details -->
+</div>
+<!-- /.row -->

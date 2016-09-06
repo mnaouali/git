@@ -1,0 +1,1 @@
+angular.module('mainApp.thegarage', ['ngSanitize', 'ui.select' ]).controller('thegarageController', thegarageController).factory('thegarageService', thegarageService);

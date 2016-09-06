@@ -1,0 +1,117 @@
+<!-- Six columns of text below the carousel to display the home menu -->
+<div class="row">
+	<div class="col-lg-4">
+		<img class="img-circle" src="resources/img/car.png"
+			alt="Enter a new car" width="140" height="140">
+		<h2>Enter a new car</h2>
+		<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
+			euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi
+			leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
+			commodo cursus magna.</p>
+		<p>
+			<a class="btn btn-default" role="button" href="#/enter_new_car" ng-click="getListEmptyVehiclePlaces('CarSpace')">Enter car
+				&raquo;</a>
+		</p>
+	</div>
+	<!-- /.col-lg-4 -->
+	<div class="col-lg-4">
+		<img class="img-circle" src="resources/img/motorbikes.png"
+			alt="Enter a new motorbike" width="140" height="140">
+		<h2>Enter a new motorbike</h2>
+		<p>Duis mollis, est non commodo luctus, nisi erat porttitor
+			ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+			sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
+			mauris condimentum nibh.</p>
+		<p>
+			<a class="btn btn-default" role="button" href="#/enter_new_motorbike" ng-click="getListEmptyVehiclePlaces('MotorbikeSpace')">Enter motorbike
+				&raquo;</a>
+		</p>
+	</div>
+	<!-- /.col-lg-4 -->
+	<div class="col-lg-4">
+		<img class="img-circle" src="resources/img/exit.png"
+			alt="Exit a vehicle" width="140" height="140">
+		<h2>Exit a vehicle</h2>
+		<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+			Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+			nibh, ut fermentum massa justo sit amet risus.</p>
+		<p>
+		<!-- input-group -->
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="exitVehicle(exitLicenceplate)">Exit it!</button>
+				</span> <input type="text" class="form-control" placeholder="Enter the vehicle's licence plate" ng-model="exitLicenceplate">
+			</div>
+		<!-- /input-group -->
+		</p>
+	</div>
+	<!-- /.col-lg-4 -->
+	<div class="col-lg-4">
+		<img class="img-circle" src="resources/img/search.png"
+			alt="Locate a vehicle" width="140" height="140">
+		<h2>Locate a vehicle</h2>
+		<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+			Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+			nibh, ut fermentum massa justo sit amet risus.</p>
+		<p>
+		<!-- input-group -->
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="getVehiclePlace(enterLicenceplate)">Locate it!</button>
+				</span> <input type="text" class="form-control" placeholder="Enter the vehicle's licence plate" ng-model="enterLicenceplate" required>
+			</div>
+		<!-- /input-group -->
+		</p>
+		
+	</div>
+	<!-- /.col-lg-4 -->
+	<div class="col-lg-4">
+		<img class="img-circle" src="resources/img/info.png"
+			alt="Garage's empty places" width="140" height="140">
+		<h2>Garage's empty places</h2>
+		<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+			Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+			nibh, ut fermentum massa justo sit amet risus.</p>
+		<p>
+			<a class="btn btn-default" role="button" href="#/info" ng-click="getAvailablePlaces()">View details
+				&raquo;</a>
+		</p>
+	</div>
+	<!-- /.col-lg-4 -->
+	<div class="col-lg-4">
+		<img class="img-circle" src="resources/img/settings.png"
+			alt="Garage details" width="140" height="140">
+		<h2>Update garage details</h2>
+		<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+			Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+			nibh, ut fermentum massa justo sit amet risus.</p>
+		<p>
+			<a class="btn btn-default" href="#/delete_car_place" role="button" ng-click="getListEmptyVehiclePlaces('CarSpace')">Delete car place
+				&raquo;</a>
+			<a class="btn btn-default" href="#/delete_motorbike_place" role="button" ng-click="getListEmptyVehiclePlaces('MotorbikeSpace')">Delete Moto place
+				&raquo;</a>
+			<a class="btn btn-default" href="#/garage_param" role="button" style = "margin-top:10px;">Add or update
+				&raquo;</a>
+		</p>
+		<p>
+		<!-- input-group -->
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="deleteLevel(levelNumberToDelete.selected.levelNumber)">Delete it!</button>
+				</span> 
+				<ui-select search-enabled="false" ng-model="levelNumberToDelete.selected"
+				theme="bootstrap" append-to-body="true"> <ui-select-match
+				placeholder="Select the level number">{{$select.selected.levelNumber}}</ui-select-match>
+			<ui-select-choices repeat="item in levelsDetails"> <span
+				ng-bind="item.levelNumber"></span> </ui-select-choices> </ui-select>
+			</div>
+		<!-- /input-group -->
+		</p>
+	</div>
+	<!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->

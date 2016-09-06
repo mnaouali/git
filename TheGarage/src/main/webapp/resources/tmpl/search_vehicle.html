@@ -1,0 +1,14 @@
+
+<!-- an input for vehicle's licence plate to look for it-->
+<div class="row" ng-controller="thegarageController">
+	<div class="col-lg-6">
+		<div class="input-group">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button" ng-click = "getVehiclePlace(licenceplate)">Locate it!</button>
+			</span> <input type="text" class="form-control" placeholder="Search for..." ng-model ="licenceplate">
+		</div>
+		<!-- /input-group -->
+	</div>
+	<!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
